@@ -6,9 +6,14 @@ angular.module('starter.controllers', [])
 
     $scope.vehiculos = vehiculosServices.all();
     $scope.remove = function (chat) {
+        
         vehiculosServices.remove(chat);
+        $state.go('tab.vehiculos');
     };
-
+    $scope.go = function (vehiculoId) {
+        $state.go('tab.vehiculodetail', { 'vehiculoId': vehiculoId});
+        $state.go('vehiculoId',vehi)
+    }
     $scope.details = function (vehiculoId) {
         console.log(vehiculoId);
         $state.go('tab.vehiculodetail', { vehiculoId: vehiculoId });
@@ -27,7 +32,7 @@ angular.module('starter.controllers', [])
         $scope.vehiculo.foto = a.foto;
         vehiculosServices.add($scope.vehiculo);
         $scope.vehiculo = {};
-        $state.go(tab.vehiculos);
+        $state.go('tab.vehiculos');
     }
 })
 

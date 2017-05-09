@@ -1,21 +1,27 @@
 <ion-view view-title="Mis Vehiculos">
-  <ion-content>
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="vehiculo in vehiculos" type="item-text-wrap" href="#/tab/vehiculo/{{vehiculo.id}}">
-        <img ng-src="{{vehiculo.foto}}">
-        <h2>{{vehiculo.nombre}}</h2>
-        <p >{{vehiculo.placa}}</p>
-        <div ng-style="{{vehiculo.color}}" style="width:60px;height:10px"></div>
-          <i class="icon ion-chevron-right icon-accessory">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="vehiculo in vehiculos" type="item-text-wrap">
+
+                <img ng-src="{{vehiculo.foto}}">
+                <h2>{{vehiculo.nombre}}</h2>
+                <p>{{vehiculo.placa}}</p>
+
+                <div style="width:60px;height:10px;background-color:{{vehiculo.color}}"></div>
+
+                <i class="icon">
              
-              <ion-button class="button-assertive" ng-click="remove(chat)">
-                
-              </ion-button>
-          </i>
-      </ion-item>
-    </ion-list>
-     
-  </ion-content>
+                    <ion-button style="margin-right:15px" ng-click="go(vehiculo.placa)"  class="ion-ios-list">
+
+                    </ion-button>
+                    <ion-button class="ion-minus-circled" ng-click="remove(vehiculo)">
+
+                    </ion-button>
+                </i>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
     <button class="bar bar-footer bar-assertive" ui-sref="tab.vehiculoNew">
         <h1 class="title">Nuevo</h1>
     </button>
