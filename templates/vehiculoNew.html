@@ -1,0 +1,32 @@
+﻿
+<ion-view view-title="Nuevo Vehiculo">
+    <ion-content class="padding">
+        <div class="list">
+           
+            <label style="margin-top:10px" class="item item-input item-select item-royal">
+                <div class="input-label">
+                    Tipo Vehiculo
+                </div>
+
+                <select ng-model="vehiculo.tipo">
+                    <option value="1">Carro</option>
+                    <option value="2">Moto</option>
+                </select>
+            </label>
+          
+            <label style="margin-top:10px" class="item item-input">
+                <input type="text" ng-model="vehiculo.nombre" placeholder="Nombre Vehiculo">
+            </label>
+
+            <label style="margin-top:10px" class="item item-input">
+                <input type="text" ng-model="vehiculo.placa" placeholder="Placa">
+            </label>
+            <label style="margin-top:10px" class="item item-input">
+                <input type="text" ng-model="vehiculo.color" placeholder="Color">
+            </label>
+        </div>
+    </ion-content>
+    <button class="bar bar-footer bar-assertive" ng-click="add()">
+        <h1 class="title">Guardar</h1>
+    </button>
+</ion-view>
