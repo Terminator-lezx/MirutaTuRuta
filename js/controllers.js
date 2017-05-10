@@ -37,16 +37,5 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AccountCtrl', function ($scope, $ionicLoading, $compile) {
-    alert('asdasd');
-    function onDeviceReady() {
-        alert('asdasd');
-        document.addEventListener('pause', onPause.bind(this), false);
-        document.addEventListener('resume', onResume.bind(this), false);
-        document.getElementById('btnTakePhoto').onclick = function () {
-            navigator.camera.getPicture(function (imageUri) {
-                var pic = document.getElementById('divPic');
-                pic.innerHTML = "<img src='" + imageUri + "'/>";
-            }, null, null);
-        };
-    }
+    
 });
